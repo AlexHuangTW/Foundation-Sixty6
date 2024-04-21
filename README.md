@@ -1,2 +1,27 @@
-# Foundation-Sixty6
-This site is made to facilitate improved access to mental healthcare for youth between the ages of 16 and 25 suffering from psychosis, bipolar disorder (BPD), and schizophrenia, specifically within Southwestern Ontario.
+# Foundation Sixty6 Website
+
+## General
+
+- This is a website for Foundation Sixty6
+- Built with Vue3, and lumen
+
+## How to Use
+
+- browse with your eyes
+- click on stuff with your mouse
+
+## General 
+
+## Todo
+
+## Pages
+
+### Home
+
+### About
+
+### Contact
+
+### News
+
+### Services
