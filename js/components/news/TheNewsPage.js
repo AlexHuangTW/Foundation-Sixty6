@@ -41,8 +41,7 @@ export default {
       <li class="-pink"
       @click="showAdmin" :class="{ 'active admin': filterType === 'admin' }"><h3>Admin</h3></li>
 
-      <li class="-green"
-      @click="showAds" :class="{ 'active ads': filterType === 'ads' }"><h3>Branding</h3></li>
+     
 
     </ul>
 
@@ -95,7 +94,8 @@ export default {
             } else if (this.filterType === 'admin') {
                 return this.eventsData.filter(event => event.type === 'admin');
             } else if (this.filterType === 'ads') {
-                return this.eventsData.filter(event => event.type === 'ads');
+                return this.eventsData.filter(event => event.type
+                === 'ads');
             }
         }
     },
@@ -103,7 +103,7 @@ export default {
         return {
             eventsData: [],
 
-            filterType: 'ads',
+            filterType: 'all',
             projectDisplay:null,
             eventTitle:null,
             eventDesc:null,
@@ -134,7 +134,7 @@ export default {
             this.getProject(this.filteredEvents[this.currentEventIndex].id);
         },
         fetchEventData() {
-            fetch('http://localhost:8888/fnd-api/public/events')
+            fetch('http://localhost:8888/events-api/public/events')
                 .then(res => res.json())
                 .then(data => {
                     console.log(data);
@@ -170,7 +170,7 @@ export default {
         getProject(eventId, galleryId) {
             console.log('getting event: ', eventId);
             // fetch(`https://idipi.ca/fnd/api/public/events/${eventId}`)
-            fetch(`http://localhost:8888/fnd-api/public/events/${eventId}`)
+            fetch(`http://localhost:8888/events-api/public/events/${eventId}`)
                 .then(res => res.json())
                 .then(data => {
                     console.log(data);
@@ -190,7 +190,7 @@ export default {
         getProjectImages(galleryId) {
             console.log('getting project images: ', galleryId);
             // fetch(`https://idipi.ca/fnd/api/public/galleries/${galleryId}`)
-            fetch(`http://localhost:8888/fnd-api/public/galleries/${galleryId}`)
+            fetch(`http://localhost:8888/events-api/public/galleries/${galleryId}`)
                 .then(res => res.json())
                 .then(data => {
                     console.log(data);
