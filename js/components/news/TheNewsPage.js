@@ -134,7 +134,7 @@ export default {
             this.getProject(this.filteredEvents[this.currentEventIndex].id);
         },
         fetchEventData() {
-            fetch('http://localhost:8888/events-api/public/events')
+            fetch('https://laravel-lumen-test-production.up.railway.app/events')
                 .then(res => res.json())
                 .then(data => {
                     console.log(data);
@@ -170,7 +170,7 @@ export default {
         getProject(eventId, galleryId) {
             console.log('getting event: ', eventId);
             // fetch(`https://idipi.ca/fnd/api/public/events/${eventId}`)
-            fetch(`http://localhost:8888/events-api/public/events/${eventId}`)
+            fetch(`https://laravel-lumen-test-production.up.railway.app/events/${eventId}`)
                 .then(res => res.json())
                 .then(data => {
                     console.log(data);
@@ -190,7 +190,7 @@ export default {
         getProjectImages(galleryId) {
             console.log('getting project images: ', galleryId);
             // fetch(`https://idipi.ca/fnd/api/public/galleries/${galleryId}`)
-            fetch(`http://localhost:8888/events-api/public/galleries/${galleryId}`)
+            fetch(`https://laravel-lumen-test-production.up.railway.app/galleries/${galleryId}`)
                 .then(res => res.json())
                 .then(data => {
                     console.log(data);
